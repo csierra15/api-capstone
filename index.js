@@ -11,7 +11,9 @@ function getApiData(searchTerm, callback) {
 }
 
 function renderResults(result) {
-    return ''
+    return `
+        
+    `;
 };
 
 function displayRecipes(data) {
