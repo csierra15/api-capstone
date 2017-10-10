@@ -1,0 +1,18 @@
+.js-recipe-more-info {
+    display: none;
+  }
+
+  * {
+      box-sizing: border-box;
+  }
+
+  main {
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  img:hover {
+      cursor: pointer;
+  }
+
+  
