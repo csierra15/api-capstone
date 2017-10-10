@@ -38,29 +38,34 @@ function getApiData(searchTerm, callback) {
 }
 
 
-function renderResults(result) {
-  console.log('renderResults ran');
+function renderRecipeInfo(result) {
+  console.log('renderRecipeInfo ran');
   return `
     <div class="recipe" data-id="${result.id}">
         <div>
             <img src="${result.image}" alt="Picture of ${result.title}">
             <p>${result.title}</p>
-        </div>
-        <div class="js-recipe-source-info">
             <p>by ${result.sourceName}</p>
             <a href="${result.sourceUrl}">See full recipe</a>
+        </div>
+        <div class="js-recipe-more-info">
+          <p>${result.originalString}</p>        
         </div>
     </div>`;
 }
 
 function displayRecipes(data) {
   console.log('displayRecipes ran');
-  const results = data.map((item, index) => renderResults(item));
+  const results = data.map((item, index) => renderRecipeInfo(item));
     $('.js-search-results').html(results);
 }
 
+function showRecipeModal() {
+  $('.js-recipe-more-info').show();
+}
+
 function watchSubmitSearch() {
-  console.log('watchSubmit ran');
+  console.log('watchSubmitSearch ran');
     $('.js-search-form').submit(event => {
       event.preventDefault();
       const searchTarget = $(event.currentTarget).find('.js-search-bar');
@@ -70,9 +75,10 @@ function watchSubmitSearch() {
     });
 
     $('.js-search-results').on('click', '.recipe', event => {
-        console.log('image clicked!');
         let id = $(event.target).closest('.recipe').data('id');
         let recipe = recipes.find(r => r.id == id);
+        showRecipeModal();
+        console.log(recipe);
     });
 }
 
