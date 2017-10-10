@@ -2,7 +2,8 @@
 
 const SPOONACULAR_INGREDIENT_SEARCH_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients";
 const SPOONACULAR_RECIPE_INFO_URL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/informationBulk";
-const recipes = [];
+
+let recipes = [];
 
 function getApiData(searchTerm, callback) {
     const headers = {
@@ -24,9 +25,11 @@ function getApiData(searchTerm, callback) {
         $.ajax({
             method: "GET",
             url: SPOONACULAR_RECIPE_INFO_URL,
-            data: {ids: ids.join(',')},
+            data: {ids:ids.join(',')},
             headers: headers
-        }).done(function(recipes){
+        }).done(function(data) {
+            console.log(recipes);
+            recipes = data;
             callback(data);
         });
     });
@@ -43,12 +46,11 @@ function renderResults(result) {
             <img src="${result.image}" alt="Picture of ${result.title}">
             <p>${result.title}</p>
         </div>
-        <div class="js-recipe-info">
+        <div class="js-recipe-source-info">
             <p>by ${result.sourceName}</p>
             <a href="${result.sourceUrl}">See full recipe</a>
         </div>
-    </div>
-  `;
+    </div>`;
 }
 
 function displayRecipes(data) {
@@ -57,7 +59,7 @@ function displayRecipes(data) {
     $('.js-search-results').html(results);
 }
 
-function watchSubmit() {
+function watchSubmitSearch() {
   console.log('watchSubmit ran');
     $('.js-search-form').submit(event => {
       event.preventDefault();
@@ -68,9 +70,10 @@ function watchSubmit() {
     });
 
     $('.js-search-results').on('click', '.recipe', event => {
+        console.log('image clicked!');
         let id = $(event.target).closest('.recipe').data('id');
         let recipe = recipes.find(r => r.id == id);
     });
 }
 
-$(watchSubmit);
+$(watchSubmitSearch);
