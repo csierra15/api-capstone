@@ -13,12 +13,13 @@
     <main role="main">
         <p>Enter ingredients you already have to find a recipe.</p>
         <p>Separate ingredients by a comma.</p>
-        <form>
-            <input type="text" class="search-bar" placeholder="apples, flour, eggs..." required></input>
-            <input type="submit" role="button" class="search-btn" value="Enter"></input>
+        <form class="js-search-form">
+          <input type="text" class="js-search-bar" placeholder="apples, flour, eggs..." required>
+          <input type="submit" role="button" class="js-search-btn" value="Enter">
         </form>
+        <div class="js-search-results"></div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
   </body>
 </html>
