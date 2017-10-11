@@ -47,11 +47,12 @@ function renderRecipeInfo(result) {
             <p>by ${result.sourceName}</p>
             <a href="${result.sourceUrl}" target="_blank">See full recipe</a>
         </div>
-        <div class="js-more-recipe-info">
-          <!-- button type="submit" class="exit-popup" hidden>x</button -->
-        </div>
     </div>`;
 }
+//html to be added later
+//<div class="js-more-recipe-info">
+//<button type="submit" class="exit-popup" hidden>x</button>
+//</div>
 
 function displayRecipes(data) {
   console.log('displayRecipes ran');
