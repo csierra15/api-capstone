@@ -46,10 +46,11 @@ function renderRecipeInfo(result) {
             <img src="${result.image}" alt="Picture of ${result.title}">
             <p>${result.title}</p>
             <p>by ${result.sourceName}</p>
-            <a href="${result.sourceUrl}">See full recipe</a>
+            <a href="${result.sourceUrl}" target="_blank">See full recipe</a>
         </div>
-        <div class="js-recipe-more-info">
-          <p>${result.originalString}</p>        
+        <div class="js-more-recipe-info">
+          <p>${result.extendedIngredients.originalString}</p>
+          <button type="submit" class="exit-popup">x</button>
         </div>
     </div>`;
 }
@@ -58,10 +59,6 @@ function displayRecipes(data) {
   console.log('displayRecipes ran');
   const results = data.map((item, index) => renderRecipeInfo(item));
     $('.js-search-results').html(results);
-}
-
-function showRecipeModal() {
-  $('.js-recipe-more-info').show();
 }
 
 function watchSubmitSearch() {
@@ -74,11 +71,15 @@ function watchSubmitSearch() {
       getApiData(search, displayRecipes);
     });
 
-    $('.js-search-results').on('click', '.recipe', event => {
+    $('.js-search-results').on('click', 'img', event => {
         let id = $(event.target).closest('.recipe').data('id');
         let recipe = recipes.find(r => r.id == id);
-        showRecipeModal();
-        console.log(recipe);
+        
+        $('.js-more-recipe-info').show();
+          $('.exit-popup').on('click', event => {
+            $('.js-more-recipe-info').hide();
+          });
+        //console.log(recipe);
     });
 }
 
