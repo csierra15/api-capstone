@@ -6,7 +6,7 @@
       box-sizing: border-box;
   }
 
-  main, header {
+  main, h1 {
       margin: 0 auto;
       text-align: center;
   }
@@ -14,4 +14,5 @@
   img:hover {
       cursor: pointer;
   }
+  
 
