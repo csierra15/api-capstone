@@ -48,7 +48,7 @@ function renderRecipeInfo(result) {
             <a href="${result.sourceUrl}" target="_blank">See full recipe</a>
         </div>
         <div class="js-more-recipe-info">
-          <button type="submit" class="exit-popup" hidden>x</button>
+          <!-- button type="submit" class="exit-popup" hidden>x</button -->
         </div>
     </div>`;
 }
