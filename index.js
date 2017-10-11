@@ -48,8 +48,7 @@ function renderRecipeInfo(result) {
             <a href="${result.sourceUrl}" target="_blank">See full recipe</a>
         </div>
         <div class="js-more-recipe-info">
-          <p>${result.extendedIngredients.originalString}</p>
-          <button type="submit" class="exit-popup">x</button>
+          <button type="submit" class="exit-popup" hidden>x</button>
         </div>
     </div>`;
 }
@@ -70,16 +69,16 @@ function watchSubmitSearch() {
       getApiData(search, displayRecipes);
     });
 
-    $('.js-search-results').on('click', 'img', event => {
-        let id = $(event.target).closest('.recipe').data('id');
-        let recipe = recipes.find(r => r.id == id);
+    //$('.js-search-results').on('click', 'img', event => {
+        //let id = $(event.target).closest('.recipe').data('id');
+        //let recipe = recipes.find(r => r.id == id);
         
-        $('.js-more-recipe-info').show();
-          $('.exit-popup').on('click', event => {
-            $('.js-more-recipe-info').hide();
-          });
+        //$('.js-more-recipe-info').show();
+          //$('.exit-popup').on('click', event => {
+            //$('.js-more-recipe-info').hide();
+          //});
         //console.log(recipe);
-    });
+    //});
 }
 
 $(watchSubmitSearch);
