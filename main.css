@@ -4,12 +4,14 @@ h1 {
     font-size: 98px;
     color: #8CBEB2;
     background-color: #5C4B51;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  head {
+  header {
     background-color: #5C4B51;
     width: 100%;
-    position: fixed;
+
   }
   
   #sub-instructions {
@@ -25,6 +27,7 @@ h1 {
     height: 100%;
     color: #5C4B51;
     padding-bottom: 100px;
+    overflow: auto;
   }
   
   p, .recipe {
@@ -65,4 +68,5 @@ h1 {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      overflow: auto;
   }
