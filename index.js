@@ -10,7 +10,7 @@ function getApiData(searchTerm, callback) {
       Accept: "application/json"};
       
     const searchQuery = {
-      ingredients: `${searchTerm.join}`,
+      ingredients: `${searchTerm}`,
       number: 5
     };
 
