@@ -10,7 +10,7 @@ function getApiData(searchTerm, callback) {
       Accept: "application/json"};
       
     const searchQuery = {
-      ingredients: `${searchTerm}`,
+      ingredients: `${searchTerm.join}`,
       number: 5
     };
 
@@ -41,11 +41,10 @@ function renderRecipeInfo(result) {
   console.log('renderRecipeInfo ran');
   return `
     <div class="recipe" data-id="${result.id}">
-        <div>
-            <img src="${result.image}" alt="Picture of ${result.title}">
+        <div class="recipe-src-info">
             <p>${result.title}</p>
-            <p>by ${result.sourceName}</p>
-            <a href="${result.sourceUrl}" target="_blank">See full recipe</a>
+            <img src="${result.image}" class="recipe-img" alt="Picture of ${result.title}">
+            <a href="${result.sourceUrl}" target="_blank">See full recipe at ${result.sourceName}</a>
         </div>
     </div>`;
 }
