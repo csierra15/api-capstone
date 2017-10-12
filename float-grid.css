@@ -4,24 +4,7 @@
   
   body {
     max-width: 1000px;
-    padding-left: 20px;
-    padding-right: 20px;
   }
-  
-  body::before,
-  body::after {
-    display: table;
-    content: '';
-  }
-  
-  body::after {
-    clear:both;
-  }
-  
-  main, header {
-    width: 100%;
-  }
-  
   
   @media only screen and (min-width: 640px) {
     .recipe-img {

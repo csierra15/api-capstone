@@ -1,20 +1,19 @@
-.js-recipe-more-info {
-    display: none;
-  }
-
-  h1 {
+h1 {
     font-family: 'Berkshire Swash', cursive;
     text-align: center;
     font-size: 98px;
     color: #8CBEB2;
     background-color: #5C4B51;
-
   }
 
   head {
     background-color: #5C4B51;
     width: 100%;
     position: fixed;
+  }
+  
+  #sub-instructions {
+    font-size: 20px;
   }
 
   main, .recipe {
@@ -36,16 +35,19 @@
       cursor: pointer;
   }
   
+  .recipe {
+    display: inline-block;
+  }
+  
   .recipe-img {
     width: 100%;
-    display: inline-block;
   }
   
   .js-search-btn {
     background-color: #C75555;  
     color: white;
     border-radius: 5px;
-    
+    cursor: pointer;
   }  
   
   input {
