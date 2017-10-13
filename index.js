@@ -11,7 +11,7 @@ function getApiData(searchTerm, callback) {
       
   const searchQuery = {
     ingredients: `${searchTerm}`,
-    number: 30
+    number: 6
   };
 
   $.ajax({
@@ -39,11 +39,14 @@ function getApiData(searchTerm, callback) {
 
 function renderRecipeInfo(result) {
   console.log('renderRecipeInfo ran');
+  $('#recipe-list').show();
+  $('#top-btn').show();
+  $('#help-text').hide();
   return `
     <div class="recipe" data-id="${result.id}">
       <div class="recipe-src-info">
-        <p>${result.title}</p>
-        <img src="${result.image}" class="recipe-img" alt="Picture of ${result.title}">
+        <img src="${result.image}" id="recipe-img" alt="Picture of ${result.title}">
+        <p id="recipe-name">${result.title}</p>
         <a href="${result.sourceUrl}" target="_blank">See full recipe at ${result.sourceName}</a>
       </div>
     </div>`;
@@ -65,14 +68,6 @@ function watchSubmitSearch() {
       searchTarget.val('');
       getApiData(search, displayRecipes);
     });
-    
-      $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
-          $('#top-btn').fadeIn();
-        } else {
-          $('#top-btn').fadeOut();
-        }
-      });
 
       $("#top-btn").click(function(event) {
         event.preventDefault();
