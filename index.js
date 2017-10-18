@@ -28,14 +28,18 @@ function getApiData(ingredients, callback) {
             data: {ids:ids.join(',')},
             headers: headers
             }).done(function(data) {
-                console.log(recipes);
                 recipes = data;
                 callback(data);
+                for(var i = 0; i < recipes.length; i++) {
+                  var obj = recipes[i];
+
+                    console.log(obj.extendedIngredients);
+}
             }).fail(function(){
               alert("Whoops! We couldn't get those results :(");
             });}else{
                 console.log("no results");
-                alert("Hmmm... We couldn't find any recipes with those terms. Check your spelling or try searching for something else.")
+                alert("Hmmm... We couldn't find any recipes with those terms. Check your spelling or try searching for something else.");
             }
   }).fail(function(){
         alert("Hmmm... We couldn't find any recipes with those terms. Check your spelling or try searching for something else.");
@@ -53,8 +57,8 @@ function renderRecipeInfo(result) {
         <img src="${result.image}" id="recipe-img" alt="Picture of ${result.title}">
         <p id="recipe-name" title="${result.title}">${result.title}</p>
         <div class="more-info">
-            <p>Estimated Cooking Time: {$result.cookingMinutes} minutes</p>
-            <p></p>
+            <p>Estimated Cooking Time: ${result.cookingMinutes} minutes</p>
+            <p>Ingredients: ${result.originalString}</p>
 
         </div>
         <a href="${result.sourceUrl}" title="${result.sourceUrl}" target="_blank">See full recipe at ${result.sourceName}</a>
@@ -87,11 +91,13 @@ function watchSubmitSearch() {
         let parent = $(event.target).closest('.recipe-card');
         parent.addClass('expanded');
         $('.overlay').show();
+        $('.more-info').show();
     });
 
     $('.overlay').click(function(event) {
         $('.overlay').hide();
         $('.recipe-card').removeClass('expanded');
+        $('.more-info').hide();
     });
 
     $('#top-btn').click(function(event) {
