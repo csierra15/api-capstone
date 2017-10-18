@@ -58,7 +58,6 @@ function renderRecipeInfo(result) {
         <p id="recipe-name" title="${result.title}">${result.title}</p>
         <div class="more-info">
             <p>Estimated Cooking Time: ${result.cookingMinutes} minutes</p>
-            <p>Ingredients: ${result.originalString}</p>
 
         </div>
         <a href="${result.sourceUrl}" title="${result.sourceUrl}" target="_blank">See full recipe at ${result.sourceName}</a>
