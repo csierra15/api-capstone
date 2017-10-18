@@ -53,10 +53,11 @@ function renderRecipeInfo(result) {
         <img src="${result.image}" id="recipe-img" alt="Picture of ${result.title}">
         <p id="recipe-name" title="${result.title}">${result.title}</p>
         <div class="more-info">
-            <p>$result.title}</p>
+            <p>Estimated Cooking Time: {$result.cookingMinutes} minutes</p>
+            <p></p>
 
         </div>
-        <a href="${result.sourceUrl}" target="_blank">See full recipe at ${result.sourceName}</a>
+        <a href="${result.sourceUrl}" title="${result.sourceUrl}" target="_blank">See full recipe at ${result.sourceName}</a>
       </div>
     </div>`;
 }
