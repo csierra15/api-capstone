@@ -11,7 +11,7 @@ function getApiData(ingredients, callback) {
       
   const searchQuery = {
     ingredients: `${ingredients}`,
-    number: 12
+    number: 6
   };
 
   $.ajax({
@@ -32,8 +32,6 @@ function getApiData(ingredients, callback) {
                 callback(data);
                 for(var i = 0; i < recipes.length; i++) {
                   var obj = recipes[i];
-
-                    console.log(obj.extendedIngredients);
 }
             }).fail(function(){
               alert("Whoops! We couldn't get those results :(");
@@ -51,16 +49,21 @@ function getApiData(ingredients, callback) {
 
 function renderRecipeInfo(result) {
   console.log('renderRecipeInfo ran');
+  
+  const ingredients = result.extendedIngredients.map(ingredient => `<li>${ingredient.originalString}</li>`).join('');
+  const cookingTime = result.cookingMinutes?`<p>Estimated Cooking Time: ${result.cookingMinutes} minutes</p>`:'';
+  
   return `
     <div class="recipe-card" data-id="${result.id}">
       <div class="recipe-src-info">
         <img src="${result.image}" id="recipe-img" alt="Picture of ${result.title}">
         <p id="recipe-name" title="${result.title}">${result.title}</p>
         <div class="more-info">
-            <p>Estimated Cooking Time: ${result.cookingMinutes} minutes</p>
-
+            ${cookingTime}
+            <ul>${ingredients}</ul>
+            <div class="close-btn">X</div>
+            <a href="${result.sourceUrl}" title="${result.sourceUrl}" target="_blank">See full recipe at ${result.sourceName}</a>
         </div>
-        <a href="${result.sourceUrl}" title="${result.sourceUrl}" target="_blank">See full recipe at ${result.sourceName}</a>
       </div>
     </div>`;
 }
@@ -95,8 +98,14 @@ function watchSubmitSearch() {
 
     $('.overlay').click(function(event) {
         $('.overlay').hide();
-        $('.recipe-card').removeClass('expanded');
         $('.more-info').hide();
+        $('.recipe-card').removeClass('expanded');
+    });
+    
+    $('.close-btn').click(function(event) {
+        $('.overlay').hide();
+        $('.more-info').hide();
+        $('.recipe-card').removeClass('expanded');
     });
 
     $('#top-btn').click(function(event) {
