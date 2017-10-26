@@ -11,7 +11,7 @@ function getApiData(ingredients, callback) {
       
   const searchQuery = {
     ingredients: `${ingredients}`,
-    number: 6
+    number: 15
   };
 
   $.ajax({
@@ -42,14 +42,10 @@ function getApiData(ingredients, callback) {
   }).fail(function(){
         alert("Hmmm... We couldn't find any recipes with those terms. Check your spelling or try searching for something else.");
       });
-
-    console.log('getApiData ran');
 }
 
 
 function renderRecipeInfo(result) {
-  console.log('renderRecipeInfo ran');
-  
   const ingredients = result.extendedIngredients.map(ingredient => `<li>${ingredient.originalString}</li>`).join('');
   const cookingTime = result.cookingMinutes?`<p>Estimated Cooking Time: ${result.cookingMinutes} minutes</p>`:'';
   

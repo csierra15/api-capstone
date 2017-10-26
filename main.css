@@ -114,6 +114,7 @@ input[type=text] {
 
 .more-info {
     display: none;
+    font-size: 0.8em;
 }
 
 .expanded .more-info {
@@ -130,6 +131,7 @@ input[type=text] {
 
 li {
   list-style: none;
+  padding-bottom: 10px;
 }
 
 input[type=text]:focus {
@@ -147,13 +149,12 @@ input[type=text]:focus {
   width: 95%;
   margin: 0 auto;
   text-align: center;
-  cursor: pointer;
 }
 
 .recipe-src-info {
   height: 50%;
   font-size: 20px;
-  cursor: default;
+  cursor: pointer;
 }
 
 #recipe-list {
