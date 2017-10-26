@@ -100,9 +100,10 @@ function watchSubmitSearch() {
         $('.recipe-card').removeClass('expanded');
     });
     
-    $('.close-btn').click(function(event) {
+    $('.js-search-results').on('click', '.close-btn', function(event) {
         $('.overlay').hide();
         $('.recipe-card').removeClass('expanded');
+        event.stopPropagation();
     });
 
     $('#top-btn').click(function(event) {
