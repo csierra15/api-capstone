@@ -93,12 +93,10 @@ function watchSubmitSearch() {
         let parent = $(event.target).closest('.recipe-card');
         parent.addClass('expanded');
         $('.overlay').show();
-        $('.more-info').show();
     });
 
     $('.overlay').click(function(event) {
         $('.overlay').hide();
-        $('.more-info').hide();
         $('.recipe-card').removeClass('expanded');
     });
     
