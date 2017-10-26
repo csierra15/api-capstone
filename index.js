@@ -102,7 +102,6 @@ function watchSubmitSearch() {
     
     $('.close-btn').click(function(event) {
         $('.overlay').hide();
-        $('.more-info').hide();
         $('.recipe-card').removeClass('expanded');
     });
 
