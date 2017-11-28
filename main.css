@@ -117,7 +117,7 @@ input[type=text] {
     display: none;
 }
 
-.expanded .moreinfo {
+.expanded .more-info {
     display: block;
 }
 
