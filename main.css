@@ -28,6 +28,7 @@ header {
 }
   
 #sub-instructions {
+  color: #5C4B51;
   font-size: 20px;
 }
 
@@ -38,7 +39,7 @@ main {
   background-color: #F2EBBF;
   width: 80%;
   height: 100%;
-  color: #5C4B51;
+  color: #8CBEB2;
   overflow: auto;
   padding: 10px 10px 100px 10px;
 }
@@ -99,7 +100,6 @@ input[type=text] {
     transform: translate(-50%, -50%);
     width: 50%;
     z-index: 999;
-    cursor: default;
 }
 
 .overlay {
@@ -115,10 +115,9 @@ input[type=text] {
 
 .more-info {
     display: none;
-    font-size: 0.8em;
 }
 
-.expanded .more-info {
+.expanded .moreinfo {
     display: block;
 }
 
@@ -128,11 +127,6 @@ input[type=text] {
   right: 0;
   cursor: pointer;
   
-}
-
-li {
-  list-style: none;
-  padding-bottom: 10px;
 }
 
 input[type=text]:focus {
@@ -155,7 +149,7 @@ input[type=text]:focus {
 .recipe-src-info {
   height: 50%;
   font-size: 20px;
-  cursor: pointer;
+  cursor: default;
 }
 
 #recipe-list {
@@ -193,10 +187,15 @@ input[type=text]:focus {
   text-decoration: none;
 }
 
-#footer-bar {
+#color-bar {
+  background-color: #C75555;
+  height: 20px;
+}
+
+.footer {
   text-align: center;
-  background-color: #C75555;  
-  color: white;
+  background-color: #8CBEB2;  
+  color: #5C4B51;
 }
   
 @media only screen and (min-width: 480px){
@@ -254,5 +253,9 @@ input[type=text]:focus {
     
   .recipe-src-info a {
     font-size: 30px;
+  }
+  
+  .footer {
+    font-size: 25px;
   }
 }
