@@ -84,6 +84,14 @@ function watchSubmitSearch() {
       getApiData(search, displayRecipes);
     });
 
+    $('.loader')
+      .hide() 
+      .ajaxStart(function() {
+          $(this).show();
+      })
+      .ajaxStop(function() {
+          $(this).hide();
+    });
 
     $('.js-search-results').on('click', function(event){
         let parent = $(event.target).closest('.recipe-card');
