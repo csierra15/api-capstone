@@ -229,7 +229,6 @@ a:after {
 
   .name {
     font-size: 50px;
-    text-align: center;
   }
 
   #top-btn {
@@ -262,11 +261,6 @@ a:after {
 
   #top-btn {
     font-size: 40px;
-  }
-
-  .name {
-    font-size: 75px;
-    text-align: center;
   }
 
   .js-search-bar {
