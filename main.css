@@ -1,8 +1,8 @@
 html, body {
   height: 100%;
 }
-  
-.background-img { 
+
+.background-img {
   background-image: url("https://i.pinimg.com/564x/73/f7/3d/73f73d6ea85daf67995e1a47d18445ae.jpg");
   height: 100%;
   background-position: center;
@@ -26,7 +26,7 @@ header {
   background-color: #5C4B51;
   width: 100%;
 }
-  
+
 #sub-instructions {
   color: #5C4B51;
   font-size: 20px;
@@ -52,28 +52,28 @@ main {
   color: #C75555;
   cursor: pointer;
 }
-  
+
 #recipe-img {
   width: 100%;
 }
-  
+
 a {
   color: #C75555;
 }
-  
+
 a:hover {
   color: #F8B165;
 }
-  
+
 .js-search-btn {
   display: block;
-  background-color: #C75555;  
+  background-color: #C75555;
   color: white;
   border-radius: 5px;
   cursor: pointer;
   margin: 0 auto;
-}  
-  
+}
+
 .js-search-btn:hover {background-color: #943F3F}
 
 .js-search-btn:active {
@@ -81,7 +81,7 @@ a:hover {
   box-shadow: 0 5px #666;
   transform: translateY(1px);
 }
-  
+
 input[type=text] {
   display: block;
   font-size: 0.7em;
@@ -132,7 +132,7 @@ ul {
   top: 0;
   right: 0;
   cursor: pointer;
-  
+
 }
 
 input[type=text]:focus {
@@ -203,7 +203,7 @@ input[type=text]:focus {
 #recipe-name {
   text-decoration: underline;
 }
-    
+
 .recipe-src-info a {
   font-size: 15px;
   text-decoration: none;
@@ -215,75 +215,79 @@ a:after {
     content: "\00bb"; /* Unicode hex for &raquo; */
 }
 
-#color-bar {
-  background-color: #C75555;
-  height: 20px;
-}
-
 .footer {
   text-align: center;
-  background-color: #8CBEB2;  
-  color: #5C4B51;
+  background-color: #C75555;
+  color: #FFF;
 }
-  
+
 @media only screen and (min-width: 480px){
-  
+
   .name {
-    font-size: 50px;  
+    font-size: 50px;
     text-align: center;
   }
-  
+
   #top-btn {
     font-size: 30px;
   }
-  
+
   .js-search-results{
     column-count: 2;
     column-gap: 10px;
   }
-  
+
   .expanded{
     width: 75%;
   }
-    
+
   .recipe-src-info p{
     font-size: 24px;
   }
-    
+
   .recipe-src-info a {
     font-size: 24px;
   }
 }
-    
+
 @media only screen and (min-width: 800px) {
-  
+
   #top-btn {
     font-size: 40px;
   }
-  
+
   .name {
-    font-size: 75px; 
+    font-size: 75px;
     text-align: center;
   }
-  
+
   .js-search-results {
     column-count: 3;
     column-gap: 5px;
   }
-  
+
   .expanded{
     width: 50%;
   }
-    
+
   .recipe-src-info p{
     font-size: 30px;
   }
-    
+
   .recipe-src-info a {
     font-size: 30px;
   }
-  
+
   .footer {
-    font-size: 25px;
+    height: 20px;
+  }
+
+  .footer a {
+    color: #000;
+    font-size: 20px;
+  }
+
+  .footer a:visited {
+    color: #000;
   }
 }

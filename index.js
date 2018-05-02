@@ -7,8 +7,9 @@ let recipes = [];
 function getApiData(ingredients, callback) {
   const headers = {
     "X-Mashape-Key": "JsnpQNRGfymshHh9jahYd6uvMBnap11yi26jsnT4SP8OOkG2Vh",
-    Accept: "application/json"};
-      
+    Accept: "application/json"
+  };
+
   const searchQuery = {
     ingredients: `${ingredients}`,
     number: 15
@@ -18,6 +19,8 @@ function getApiData(ingredients, callback) {
     method: "GET",
     url: SPOONACULAR_INGREDIENT_SEARCH_URL,
     data: searchQuery,
+    beforeSend: () => {$('.loader').show()},
+    complete: () => {$('.loader').hide()},
     headers: headers
   }).done(function(data){
       let ids = data.map(r => r.id);
@@ -48,7 +51,7 @@ function getApiData(ingredients, callback) {
 function renderRecipeInfo(result) {
   const ingredients = result.extendedIngredients.map(ingredient => `<li>${ingredient.originalString}</li>`).join('');
   const cookingTime = result.cookingMinutes?`<p>Estimated Cooking Time: ${result.cookingMinutes} minutes</p>`:'';
-  
+
   return `
     <div class="recipe-card" data-id="${result.id}">
       <div class="recipe-src-info">
@@ -64,61 +67,50 @@ function renderRecipeInfo(result) {
     </div>`;
 }
 
-
 function displayRecipes(data) {
-    $('#recipe-list').show();
-    $('#top-btn').show();
-    $('#help-text').hide();
-    console.log('displayRecipes ran');
-    const results = data.map((item, index) => renderRecipeInfo(item));
-        $('.js-search-results').html(results);
+  $('#recipe-list').show();
+  $('#top-btn').show();
+  $('#help-text').hide();
+  const results = data.map((item, index) => renderRecipeInfo(item));
+      $('.js-search-results').html(results);
 }
 
 function watchSubmitSearch() {
-  console.log('watchSubmitSearch ran');
-    $('.js-search-form').submit(event => {
+  $('.loader').hide();
+  $('.js-search-form').submit(event => {
+    event.preventDefault();
+    const searchTarget = $(event.currentTarget).find('.js-search-bar');
+    const search = searchTarget.val();
+    searchTarget.val('');
+    getApiData(search, displayRecipes);
+  });
+
+  $('.js-search-results').on('click', function(event){
+      let parent = $(event.target).closest('.recipe-card');
+      parent.addClass('expanded');
+      $('.overlay').show();
+  });
+
+  $('.overlay').click(function(event) {
+      $('.overlay').hide();
+      $('.recipe-card').removeClass('expanded');
+  });
+
+  $('.js-search-results').on('click', '.close-btn', function(event) {
+      $('.overlay').hide();
+      $('.recipe-card').removeClass('expanded');
+      event.stopPropagation();
+  });
+
+  $('#top-btn').click(function(event) {
       event.preventDefault();
-      const searchTarget = $(event.currentTarget).find('.js-search-bar');
-      const search = searchTarget.val();
-      searchTarget.val('');
-      getApiData(search, displayRecipes);
-    });
-
-    $('.loader')
-      .hide() 
-      .ajaxStart(function() {
-          $(this).show();
-      })
-      .ajaxStop(function() {
-          $(this).hide();
-    });
-
-    $('.js-search-results').on('click', function(event){
-        let parent = $(event.target).closest('.recipe-card');
-        parent.addClass('expanded');
-        $('.overlay').show();
-    });
-
-    $('.overlay').click(function(event) {
-        $('.overlay').hide();
-        $('.recipe-card').removeClass('expanded');
-    });
-    
-    $('.js-search-results').on('click', '.close-btn', function(event) {
-        $('.overlay').hide();
-        $('.recipe-card').removeClass('expanded');
-        event.stopPropagation();
-    });
-
-    $('#top-btn').click(function(event) {
-        event.preventDefault();
-	    $('main').animate({scrollTop: 0}, 'fast', function(){
-            $('.background-img').animate({scrollTop: 0}, 'fast');
-                $('html').animate({scrollTop: 0}, 'fast');
-        });
+    $('main').animate({scrollTop: 0}, 'fast', function(){
+          $('.background-img').animate({scrollTop: 0}, 'fast');
+              $('html').animate({scrollTop: 0}, 'fast');
       });
+    });
 
-      return false;
+    return false;
 }
 
 $(watchSubmitSearch);
