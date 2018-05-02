@@ -1,6 +1,6 @@
 # Foodle
 
-I believe food always tastes better at home. But when you don't have much (or, any) cooking experience, that can be scary. Foodle can ease the transition from going out to eating in by helping you search for recipes using ingredients already in your pantry.
+I believe food always tastes better at home. But when you don't have much (or any) cooking experience, that can be scary. Foodle can ease the transition from going out to eating in by helping you search for recipes using ingredients already in your pantry.
 
 API Used
 --------
@@ -19,4 +19,3 @@ Foodle uses Responsive Design and is ARIA friendly
 
 ![Landing Page](/landing.png?raw=true "Landing Page")
 ![results](/results.png?raw=true "Results Page")
-

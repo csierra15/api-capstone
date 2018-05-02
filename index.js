@@ -84,6 +84,9 @@ function watchSubmitSearch() {
     const search = searchTarget.val();
     searchTarget.val('');
     getApiData(search, displayRecipes);
+    $('html, body').animate({
+      scrollTop: ($('.js-search-results').offset().top)
+    },1000);
   });
 
   $('.js-search-results').on('click', function(event){
