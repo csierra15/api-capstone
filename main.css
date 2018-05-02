@@ -1,7 +1,3 @@
-html, body {
-  height: 100%;
-}
-
 .background-img {
   background-image: url("https://i.pinimg.com/564x/73/f7/3d/73f73d6ea85daf67995e1a47d18445ae.jpg");
   height: 100%;
@@ -25,6 +21,14 @@ html, body {
 header {
   background-color: #5C4B51;
   width: 100%;
+}
+
+.fa-chevron-down:hover {
+  cursor: pointer;
+}
+
+.search {
+  margin-top: 3em;
 }
 
 #sub-instructions {
@@ -257,6 +261,10 @@ a:after {
 
   main {
     width: 50%;
+  }
+
+  .info {
+    margin-top: 3em;
   }
 
   #top-btn {

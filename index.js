@@ -77,7 +77,9 @@ function displayRecipes(data) {
 }
 
 function watchSubmitSearch() {
+  //hide loader until user submits form
   $('.loader').hide();
+  //submit ajax request
   $('.js-search-form').submit(event => {
     event.preventDefault();
     const searchTarget = $(event.currentTarget).find('.js-search-bar');
@@ -86,9 +88,16 @@ function watchSubmitSearch() {
     getApiData(search, displayRecipes);
   });
 
+  //scrolls
   $('.js-search-btn').click(() => {
     $('html, body').animate({
       scrollTop: ($('.js-search-results').offset().top)
+    },1000);
+  });
+
+  $('.fa-chevron-down').click(() => {
+    $('html, body').animate({
+      scrollTop: ($('.search').offset().top)
     },1000);
   });
 
