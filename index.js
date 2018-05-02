@@ -5,9 +5,10 @@ const SPOONACULAR_RECIPE_INFO_URL = "https://spoonacular-recipe-food-nutrition-v
 let recipes = [];
 
 function getApiData(ingredients, callback) {
+
   const headers = {
     "X-Mashape-Key": "JsnpQNRGfymshHh9jahYd6uvMBnap11yi26jsnT4SP8OOkG2Vh",
-    Accept: "application/json"
+    "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"
   };
 
   const searchQuery = {

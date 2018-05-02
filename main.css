@@ -38,7 +38,7 @@ main {
   margin: 0 auto;
   font-size: 30px;
   background-color: #F2EBBF;
-  width: 80%;
+  max-width: 80%;
   height: 100%;
   color: #8CBEB2;
   overflow: auto;
@@ -65,6 +65,10 @@ a:hover {
   color: #F8B165;
 }
 
+.js-search-bar {
+  padding-left: 10px;
+}
+
 .js-search-btn {
   display: block;
   background-color: #C75555;
@@ -87,7 +91,7 @@ input[type=text] {
   font-size: 0.7em;
   margin: 10px auto;
   border-radius: 10px;
-  width: 75%;
+  width: 50%;
   -webkit-transition: width 0.4s ease-in-out;
   -moz-transition: width 0.4s ease-in-out;
   -o-transition: width 0.4s ease-in-out;
@@ -138,7 +142,7 @@ ul {
 input[type=text]:focus {
   box-shadow: 10px 10px 5px #888888;
   border: 3px solid #8CBEB2;
-  width: 100%;
+  width: 75%;
   outline: none;
 }
 
@@ -252,6 +256,10 @@ a:after {
 
 @media only screen and (min-width: 800px) {
 
+  main {
+    width: 50%;
+  }
+
   #top-btn {
     font-size: 40px;
   }
@@ -259,6 +267,10 @@ a:after {
   .name {
     font-size: 75px;
     text-align: center;
+  }
+
+  .js-search-bar {
+    width: 30%;
   }
 
   .js-search-results {
