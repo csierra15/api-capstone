@@ -23,9 +23,6 @@ function getApiData(ingredients, callback) {
     beforeSend: () => {$('.loader').show()},
     complete: () => {
       $('.loader').hide()
-      $('html, body').animate({
-        scrollTop: ($('.recipe-list-title').offset().top)
-      },1000);
     },
     headers: headers
   }).done(function(data){
@@ -103,6 +100,12 @@ function watchSubmitSearch() {
   $('#chevron-down').click(() => {
     $('html, body').animate({
       scrollTop: ($('.js-search-results').offset().top)
+    },1000);
+  });
+
+  $('.js-search-btn').click(() => {
+    $('html, body').animate({
+      scrollTop: ($('#recipe-list-title').offset().top)
     },1000);
   });
 

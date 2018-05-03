@@ -245,19 +245,21 @@ ul {
   font-family: 'Berkshire Swash', cursive;
   display: none;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .recipe-card {
   margin-bottom: 15px;
-  display: inline-block;
   border: 1px solid #CCC;
   background-color: #FFF;
   box-shadow: 5px 5px 3px #888888;
   border-radius: 10px;
   padding-bottom: 10px;
   width: 90%;
-  height: 250px;
+  display: flex;
+  height: auto;
   cursor: pointer;
+  margin: 0 auto;
 }
 
 .card:hover {
@@ -300,6 +302,10 @@ ul {
 
 @media only screen and (min-width: 480px){
 
+  .recipe-card {
+    display: inline-block;
+  }
+
   .name {
     font-size: 50px;
   }
@@ -311,14 +317,6 @@ ul {
 
   .expanded{
     width: 75%;
-  }
-
-  .recipe-src-info p{
-    font-size: 24px;
-  }
-
-  .recipe-src-info a {
-    font-size: 24px;
   }
 }
 
@@ -359,15 +357,8 @@ ul {
   }
 
   .recipe-card {
-    height: 400px;
-  }
-
-  .recipe-src-info p{
-    font-size: 30px;
-  }
-
-  .recipe-src-info a {
-    font-size: 30px;
+    display: flex;
+    float: left;
   }
 
 }
