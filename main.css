@@ -175,10 +175,6 @@ input[type=text]:focus {
   text-align: center;
 }
 
-#recipe-img {
-  width: 100%;
-}
-
 a {
   color: #C75555;
 }
@@ -272,6 +268,7 @@ ul {
 #recipe-img {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  width: 100%;
 }
 
 .recipe-src-info a {

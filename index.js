@@ -13,7 +13,7 @@ function getApiData(ingredients, callback) {
 
   const searchQuery = {
     ingredients: `${ingredients}`,
-    number: 6
+    number: 12
   };
 
   $.ajax({
@@ -62,7 +62,7 @@ function renderRecipeInfo(result) {
     <div class="recipe-card" data-id="${result.id}">
       <div class="recipe-src-info">
         <img src="${result.image}" id="recipe-img" alt="Picture of ${result.title}">
-        <p id="recipe-name" title="${result.title}">${result.title}</p>
+        <h3 id="recipe-name" title="${result.title}">${result.title}</h3>
         <div class="more-info">
             ${cookingTime}
             <ul>${ingredients}</ul>
