@@ -88,7 +88,6 @@ main {
 }
 
 #chevron-down {
-  color: #FFF;
   border: none;
   margin-top: -20rem;
 }
@@ -358,6 +357,8 @@ ul {
 
   .expanded {
     width: 50%;
+    height: auto;
+    overflow: auto;
   }
 
   .recipe-card {
