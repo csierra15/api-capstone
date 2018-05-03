@@ -16,32 +16,34 @@
     <header role="banner">
       <h1 class="name">Foodle</h1>
     </header>
-    <div class="background-img">
 
     <main role="main">
       <section class="info">
-        <h2 id="instructions">Find something to cook with the food you already have.</h2>
+        <div class="background-img">
+          <h2>Find something to cook with the food you already have.</h2>
+        </div>
         <button id="chevron-down"><i class="fas fa-chevron-down fa-lg" data-fa-transform="down-6" style="color: #5C4B51; cursor: pointer;"></i></button>
       </section>
 
       <section class="search">
-        <h4 id="sub-instructions">Enter your ingredients separated by a comma into the search bar to see recipes! </h4>
+        <h4>Enter your ingredients separated by a comma into the search bar to see recipes! </h4>
         <form class="js-search-form">
           <input type="text" class="js-search-bar" placeholder="apples, flour" required />
           <button type="submit" class="js-search-btn">Search  <i class="fas fa-search fa-xs"></i></button>
         </form>
         <div class="loader"></div>
+      </section>
+      <section class="results">
         <p id="recipe-list">Recipes for you: </p>
         <div class="js-search-results"></div>
         <div id="top-btn">^ Back To Top</div>
         <div class="overlay"></div>
       </section>
 
+      <footer role="navigation" class="footer">
+        <span id="contactinfo">Made by Carly Sierra <a href="https://github.com/csierra15/foodle"><i class="fab fa-github-square"></i></a></span>
+      </footer>
     </main>
-    </div>
-    <footer role="navigation" class="footer">
-      <span id="contactinfo">Made by Carly Sierra <a href="https://github.com/csierra15/foodle"><i class="fab fa-github-square"></i></a></span>
-    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="index.js"></script>

@@ -96,9 +96,8 @@ function watchSubmitSearch() {
   });
 
   $('#chevron-down').click(() => {
-    console.log('hello');
     $('html, body').animate({
-      scrollTop: ($('.search').offset().top)
+      scrollTop: ($('.js-search-results').offset().top)
     },1000);
   });
 
@@ -123,7 +122,7 @@ function watchSubmitSearch() {
       event.preventDefault();
     $('main').animate({scrollTop: 0}, 'fast', function(){
           $('.background-img').animate({scrollTop: 0}, 'fast');
-              $('html').animate({scrollTop: 0}, 'fast');
+              $('.search').animate({scrollTop: 0}, 'fast');
       });
     });
 
