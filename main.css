@@ -22,6 +22,15 @@ html, body {
 
 /* header styles */
 
+header {
+  background-color: #5C4B51;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
 .name {
   font-family: 'Berkshire Swash', cursive;
   text-align: left;
@@ -37,12 +46,6 @@ html, body {
   cursor: pointer;
 }
 
-header {
-  background-color: #5C4B51;
-  width: 100%;
-  position: fixed;
-}
-
 /* main styles */
 
 main {
@@ -56,28 +59,32 @@ main {
   color: #5C4B51;
 }
 
-.info {
-  height: 50%;
-  margin-bottom: 20rem;
-}
-
-.info h2 {
-  color: #FFF;
-  padding: 20px;
-  font-size: 2.5rem;
-}
-
 .background-img {
   background-image:
     linear-gradient(
-      rgba(140, 190, 178, 0.25),
-      rgba(140, 190, 178, 0.75)
+      rgba(140, 190, 178, 0.45),
+      rgba(140, 190, 178, 0.85)
     ),
     url("https://i.pinimg.com/564x/73/f7/3d/73f73d6ea85daf67995e1a47d18445ae.jpg");
   width: 100%;
   height: 20rem;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.info {
+  height: 300px;
+  margin-top: 3rem;
+  margin-bottom: 20rem;
+}
+
+#info-text {
+  color: #FFF;
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: normal;
+  position: absolute;
+  top: 20%;
 }
 
 #chevron-down {
@@ -192,7 +199,7 @@ a:after {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
-    z-index: 999;
+    z-index: 998;
 }
 
 .overlay {
@@ -203,7 +210,7 @@ a:after {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.3);
-    z-index: 998;
+    z-index: 997;
 }
 
 .more-info {
@@ -325,9 +332,11 @@ ul {
     height: 35rem;
   }
 
-  .info h2 {
+  #info-text {
     margin: 0 auto;
     padding-top: 15rem;
+    top: -5%;
+    left: 22%;
   }
 
   .search {
