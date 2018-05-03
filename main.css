@@ -49,6 +49,15 @@ main {
   padding: 10px 10px 100px 10px;
 }
 
+#chevron-down {
+  background-color: #F2EBBF;
+  border: none;
+}
+
+#chevron-down:focus {
+  outline-width: 0;
+}
+
 #top-btn {
   display: none;
   font-size: 20px;

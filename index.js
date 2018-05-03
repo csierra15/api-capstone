@@ -95,7 +95,8 @@ function watchSubmitSearch() {
     },1000);
   });
 
-  $('.fa-chevron-down').click(() => {
+  $('#chevron-down').click(() => {
+    console.log('hello');
     $('html, body').animate({
       scrollTop: ($('.search').offset().top)
     },1000);
