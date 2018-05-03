@@ -257,7 +257,7 @@ ul {
   border-radius: 10px;
   padding-bottom: 10px;
   width: 90%;
-  height: 400px;
+  height: 250px;
   cursor: pointer;
 }
 
@@ -354,6 +354,10 @@ ul {
 
   .expanded {
     width: 50%;
+  }
+
+  .recipe-card {
+    height: 400px;
   }
 
   .recipe-src-info p{
