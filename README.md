@@ -14,8 +14,8 @@ Responsive
 ----------
 Foodle uses Responsive Design and is ARIA friendly
 
-![Mobile](/mobile.png?raw=true "Mobile")
+![Mobile](/images/mobile.png?raw=true "Mobile")
 
 
-![Landing Page](/landing.png?raw=true "Landing Page")
-![results](/results.png?raw=true "Results Page")
+![Landing Page](/images/landing.png?raw=true "Landing Page")
+![results](/images/results.png?raw=true "Results Page")

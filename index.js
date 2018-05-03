@@ -13,7 +13,7 @@ function getApiData(ingredients, callback) {
 
   const searchQuery = {
     ingredients: `${ingredients}`,
-    number: 3
+    number: 15
   };
 
   $.ajax({
