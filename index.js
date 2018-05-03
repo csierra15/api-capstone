@@ -21,7 +21,12 @@ function getApiData(ingredients, callback) {
     url: SPOONACULAR_INGREDIENT_SEARCH_URL,
     data: searchQuery,
     beforeSend: () => {$('.loader').show()},
-    complete: () => {$('.loader').hide()},
+    complete: () => {
+      $('.loader').hide()
+      $('html, body').animate({
+        scrollTop: ($('.js-search-results').offset().top)
+      },1000);
+    },
     headers: headers
   }).done(function(data){
       let ids = data.map(r => r.id);
@@ -92,12 +97,6 @@ function watchSubmitSearch() {
   $('.name').click(() => {
     $('html, body').animate({
       scrollTop: ($('html').offset().top)
-    },1000);
-  });
-
-  $('.js-search-btn').click(() => {
-    $('html, body').animate({
-      scrollTop: ($('.js-search-results').offset().top)
     },1000);
   });
 
