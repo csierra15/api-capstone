@@ -31,9 +31,14 @@ html, body {
   padding-left: 30px;
 }
 
+.name:hover {
+  cursor: pointer;
+}
+
 header {
   background-color: #5C4B51;
   width: 100%;
+  position: fixed;
 }
 
 .info {
@@ -93,14 +98,6 @@ main {
 
 #chevron-down:focus {
   outline-width: 0;
-}
-
-#top-btn {
-  display: none;
-  font-size: 20px;
-  float: right;
-  color: #C75555;
-  cursor: pointer;
 }
 
 #recipe-img {
@@ -219,7 +216,6 @@ ul {
 }
 
 .js-search-results {
-  display: flex;
   width: 95%;
   margin: 0 auto;
   text-align: center;
@@ -245,6 +241,7 @@ ul {
   border-radius: 10px;
   padding-bottom: 10px;
   width: 90%;
+  height: 400px;
   cursor: pointer;
 }
 
@@ -293,10 +290,6 @@ a:after {
     font-size: 50px;
   }
 
-  #top-btn {
-    font-size: 30px;
-  }
-
   .js-search-results{
     column-count: 2;
     column-gap: 10px;
@@ -332,10 +325,6 @@ a:after {
 
   .search {
     margin-top: 20rem;
-  }
-
-  #top-btn {
-    font-size: 40px;
   }
 
   .js-search-bar {

@@ -89,6 +89,12 @@ function watchSubmitSearch() {
   });
 
   //scrolls
+  $('.name').click(() => {
+    $('html, body').animate({
+      scrollTop: ($('html').offset().top)
+    },1000);
+  });
+
   $('.js-search-btn').click(() => {
     $('html, body').animate({
       scrollTop: ($('.js-search-results').offset().top)
@@ -100,6 +106,8 @@ function watchSubmitSearch() {
       scrollTop: ($('.js-search-results').offset().top)
     },1000);
   });
+
+  //search results
 
   $('.js-search-results').on('click', function(event){
       let parent = $(event.target).closest('.recipe-card');
@@ -117,14 +125,6 @@ function watchSubmitSearch() {
       $('.recipe-card').removeClass('expanded');
       event.stopPropagation();
   });
-
-  $('#top-btn').click(function(event) {
-      event.preventDefault();
-    $('main').animate({scrollTop: 0}, 'fast', function(){
-          $('.background-img').animate({scrollTop: 0}, 'fast');
-              $('.search').animate({scrollTop: 0}, 'fast');
-      });
-    });
 
     return false;
 }
