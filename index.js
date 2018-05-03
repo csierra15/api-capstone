@@ -13,7 +13,7 @@ function getApiData(ingredients, callback) {
 
   const searchQuery = {
     ingredients: `${ingredients}`,
-    number: 15
+    number: 6
   };
 
   $.ajax({
@@ -24,7 +24,7 @@ function getApiData(ingredients, callback) {
     complete: () => {
       $('.loader').hide()
       $('html, body').animate({
-        scrollTop: ($('.js-search-results').offset().top)
+        scrollTop: ($('.recipe-list-title').offset().top)
       },1000);
     },
     headers: headers
@@ -74,7 +74,7 @@ function renderRecipeInfo(result) {
 }
 
 function displayRecipes(data) {
-  $('#recipe-list').show();
+  $('#recipe-list-title').show();
   $('#top-btn').show();
   $('#help-text').hide();
   const results = data.map((item, index) => renderRecipeInfo(item));

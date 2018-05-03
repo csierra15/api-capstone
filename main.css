@@ -67,7 +67,7 @@ main {
     ),
     url("https://i.pinimg.com/564x/73/f7/3d/73f73d6ea85daf67995e1a47d18445ae.jpg");
   width: 100%;
-  height: 20rem;
+  height: 30rem;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -88,9 +88,9 @@ main {
 }
 
 #chevron-down {
-  background-color: #FFF;
+  color: #FFF;
   border: none;
-  margin-top: 3rem;
+  margin-top: -20rem;
 }
 
 #chevron-down:focus {
@@ -98,7 +98,8 @@ main {
 }
 
 .search {
-  margin-bottom: 8em;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 
 .search h4 {
@@ -245,7 +246,8 @@ ul {
   cursor: default;
 }
 
-#recipe-list {
+#recipe-list-title {
+  font-family: 'Berkshire Swash', cursive;
   display: none;
   text-align: center;
 }
@@ -259,7 +261,7 @@ ul {
   border-radius: 10px;
   padding-bottom: 10px;
   width: 90%;
-  height: 300px;
+  height: 250px;
   cursor: pointer;
 }
 
@@ -311,15 +313,11 @@ ul {
     column-gap: 10px;
   }
 
-  .expanded {
+  .expanded{
     width: 75%;
   }
 
-  .recipe-card {
-    height: 400px;
-  }
-
-  .recipe-src-info p {
+  .recipe-src-info p{
     font-size: 24px;
   }
 
@@ -360,6 +358,10 @@ ul {
 
   .expanded {
     width: 50%;
+  }
+
+  .recipe-card {
+    height: 400px;
   }
 
   .recipe-src-info p{
