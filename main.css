@@ -89,7 +89,7 @@ main {
 
 #chevron-down {
   border: none;
-  margin-top: -20rem;
+  background-color: transparent;
 }
 
 #chevron-down:focus {
