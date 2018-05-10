@@ -105,7 +105,7 @@ function watchSubmitSearch() {
 
   $('.js-search-btn').click(() => {
     $('html, body').animate({
-      scrollTop: ($('#recipe-list-title').offset().top)
+      scrollTop: ($('.js-search-results').offset().top)
     },1000);
   });
 
